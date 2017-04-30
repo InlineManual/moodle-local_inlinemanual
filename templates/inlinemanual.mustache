@@ -1,0 +1,34 @@
+{{!
+    This file is part the Inline Manual plugin for Moodle
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template local_inlinemanual/inlinemanual
+
+    Template for adding the Inline Manual script.
+
+    Classes required for JS:
+    * none
+
+    Data attributes required for JS:
+    * none
+
+    Context variables required for this template:
+    * siteapikey The Google tracking code
+}}
+{{#js}}
+    window.inlineManualTracking = {{{tracking}}};
+
+    !function(){var e=document.createElement("script"),t=document.getElementsByTagName("script")[0];e.async=1,e.src="https://inlinemanual.com/embed/player.{{siteapikey}}.js",e.charset="UTF-8",t.parentNode.insertBefore(e,t)}();
+{{/js}}
